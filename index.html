@@ -373,9 +373,8 @@
   <!-- Showreel de fondo: colocar el archivo en img/showreel.mp4 (horizontal, 15-25s, sin audio, <10MB).
        Mientras no exista, la página muestra el fondo dorado normal. -->
   <div class="hero-bg" id="hero-bg">
-    <video id="showreel" autoplay muted loop playsinline preload="metadata">
-      <source src="img/showreel.mp4" type="video/mp4">
-    </video>
+    <!-- El src se asigna por JS: así el video NO se descarga en celular ni con ahorro de datos. -->
+    <video id="showreel" autoplay muted loop playsinline preload="auto" data-src="img/showreel.mp4"></video>
     <div class="scrim"></div>
   </div>
   <div class="orb orb-1"></div>
@@ -788,9 +787,24 @@
     }, { once: true });
   });
 
-  // Showreel: solo se muestra si el video existe y carga
+  // Showreel de fondo. Se carga solo donde tiene sentido: pantallas grandes y sin ahorro de datos.
+  // En celular o conexión lenta no se descarga (el archivo pesa varios MB) y queda el fondo dorado.
   const showreel = document.getElementById('showreel');
-  showreel.addEventListener('loadeddata', () => document.getElementById('hero-bg').classList.add('on'));
+  const heroBg = document.getElementById('hero-bg');
+  const conexion = navigator.connection || {};
+  const conexionLenta = conexion.saveData === true || /(^|-)(2g|3g)$/.test(conexion.effectiveType || '');
+  const pantallaChica = window.matchMedia('(max-width: 900px)').matches;
+  const menosMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!pantallaChica && !conexionLenta && !menosMovimiento) {
+    // Visible por defecto; se oculta solo si el archivo falta o el navegador no puede reproducirlo.
+    // (No se espera 'loadeddata': con la pestaña en segundo plano el navegador difiere la carga.)
+    heroBg.classList.add('on');
+    showreel.addEventListener('error', () => heroBg.classList.remove('on'));
+    showreel.src = showreel.dataset.src;
+  } else {
+    heroBg.remove();
+  }
 
   // Header: sombra dorada al hacer scroll
   const hdr = document.querySelector('header');
