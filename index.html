@@ -174,7 +174,7 @@
 
   /* ============ HERO ============ */
   /* el header mide 72px: el padding superior evita que el titular quede debajo */
-  .hero{padding:84px 0 64px;position:relative;overflow:hidden;min-height:min(80vh,760px);display:flex;align-items:center}
+  .hero{padding:92px 0 80px;position:relative;overflow:hidden;min-height:min(80vh,760px);display:flex;align-items:center}
   .hero .wrap{width:100%;position:relative;z-index:3;transform:translate3d(0,var(--copy-y,0),0);opacity:var(--copy-opacity,1);will-change:transform,opacity}
   .hero h1{font-size:clamp(2.6rem,7vw,5rem);max-width:900px;text-transform:uppercase;line-height:1.02}
 
@@ -241,25 +241,9 @@
   .orb-1{width:360px;height:360px;background:rgba(232,184,78,.13);top:-70px;right:-90px;animation:drift 10s ease-in-out infinite}
   .orb-2{width:280px;height:280px;background:rgba(185,128,42,.10);bottom:-80px;left:-70px;animation:drift 13s ease-in-out infinite reverse}
   @keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(36px,-32px)}}
-  /* credenciales: compactas para que quepan en la primera pantalla junto a los sellos */
-  .hero-stats{display:flex;gap:0 30px;margin-top:26px;flex-wrap:wrap;
-    border-top:1px solid var(--line-soft);padding-top:20px;max-width:760px}
-  .hero-stats div{position:relative;padding-right:30px}
-  .hero-stats div:not(:last-child)::after{content:"";position:absolute;right:0;top:4px;bottom:4px;
-    width:1px;background:linear-gradient(180deg,transparent,var(--line),transparent)}
-  .hero-stats div b{font-family:"Clash Display",sans-serif;font-weight:600;font-size:1.25rem;display:block;line-height:1.2;
-    background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .hero-stats div span{font-size:.78rem;color:var(--muted);line-height:1.4;display:block;margin-top:2px}
-
-  /* pantallas bajas (portátiles de 1366x768 y similares): el hero se compacta
-     para que los sellos y las credenciales sigan cabiendo sin hacer scroll */
-  @media (min-width:901px) and (max-height:820px){
-    .hero{padding:70px 0 44px;min-height:auto}
-    .hero h1{font-size:clamp(2.2rem,4.6vw,3.9rem)}
-    .hero p.lead{margin:16px 0 24px;font-size:1.02rem}
-    .hero-stats{margin-top:18px;padding-top:14px}
-    .hero-trust{margin-top:12px}
-  }
+  .hero-stats{display:flex;gap:40px;margin-top:56px;flex-wrap:wrap}
+  .hero-stats div b{font-family:"Clash Display",sans-serif;font-size:1.5rem;display:block}
+  .hero-stats div span{font-size:.85rem;color:var(--muted)}
 
   /* ============ CLIENTES (sección con resplandor + logos) ============ */
   .clients{position:relative;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);
@@ -467,11 +451,7 @@
     .team{grid-template-columns:1fr 1fr}
     .hero{padding:70px 0 60px}
     .sec{padding:64px 0}
-    /* apiladas en celular: sin separadores verticales sueltos */
-    .hero-stats{gap:14px 0;margin-top:20px;padding-top:16px}
-    .hero-stats div{padding-right:0;width:100%}
-    .hero-stats div:not(:last-child)::after{display:none}
-    .hero-stats div b{font-size:1.15rem}
+    .hero-stats{gap:24px}
     .hero-trust{gap:6px 14px}
     #wa-float{right:18px;bottom:max(18px,env(safe-area-inset-bottom));width:54px;height:54px}
   }
@@ -574,9 +554,9 @@
       <span>Sin compromiso</span>
     </div>
     <div class="hero-stats">
-      <div><b>1,4 M</b><span>de visualizaciones en un mes</span></div>
-      <div><b>Estudio propio</b><span>foto, video y entrevistas</span></div>
-      <div><b>Equipo completo</b><span>contenido, producción y pauta</span></div>
+      <div><b>1,4 M</b><span>de visualizaciones en un mes<br>para un solo cliente</span></div>
+      <div><b>Estudio propio</b><span>en Cali: fotografía, video<br>y set de entrevistas</span></div>
+      <div><b>Equipo completo</b><span>estrategia, community, foto,<br>video, UGC y pauta</span></div>
     </div>
   </div>
 </section>
