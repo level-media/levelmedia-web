@@ -3,15 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Level Media · Agencia de Marketing Digital en Cali | Llevamos tu marca a otro level</title>
-<meta name="description" content="Agencia de marketing digital en Cali. Manejo de redes sociales, pauta en Meta Ads, fotografía y video profesional, videos con drone y diseño web. Transformamos marcas en experiencias digitales que conectan, venden y fidelizan.">
+<title>Agencia de Marketing Digital en Cali | Level Media</title>
+<meta name="description" content="Estrategia, contenido y pauta para marcas en Cali. Estudio audiovisual propio y resultados de hasta 1,4 millones de visualizaciones en un mes.">
 <link rel="icon" type="image/png" href="img/favicon.png">
 <link rel="canonical" href="https://levelmediaagencia.com/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Level Media · Agencia de Marketing Digital en Cali">
-<meta property="og:description" content="Transformamos marcas en experiencias digitales que conectan, venden y fidelizan. Redes sociales, pauta, foto y video profesional.">
+<meta property="og:url" content="https://levelmediaagencia.com/">
+<meta property="og:site_name" content="Level Media">
+<meta property="og:title" content="Agencia de Marketing Digital en Cali | Level Media">
+<meta property="og:description" content="Estrategia, contenido y pauta con estudio audiovisual propio. Resultados de hasta 1,4 millones de visualizaciones en un mes.">
 <meta property="og:image" content="https://levelmediaagencia.com/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:locale" content="es_CO">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Agencia de Marketing Digital en Cali | Level Media">
+<meta name="twitter:description" content="Estrategia, contenido y pauta con estudio audiovisual propio. Resultados de hasta 1,4 millones de visualizaciones en un mes.">
+<meta name="twitter:image" content="https://levelmediaagencia.com/img/og.jpg">
 
 <!-- ==================== GOOGLE ANALYTICS 4 ==================== -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3G45KMG39K"></script>
@@ -72,12 +80,14 @@
     --g-flat:#e3b94f;
     --text:#f6f3ec;
     --muted:#a59c8f;
-    --muted-2:#766d61;
+    --muted-2:#8f8578;   /* contraste 4.9:1 sobre los paneles (antes 3.4:1) */
     --maxw:1120px;
     --gold-grad:linear-gradient(110deg,var(--g1),var(--g2) 45%,var(--g3) 78%,var(--g2));
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
+  /* el header es fijo: sin esto los títulos quedan tapados al usar el menú */
+  section[id],div[id]{scroll-margin-top:84px}
   body{background:var(--bg);color:var(--text);font-family:"Satoshi",sans-serif;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
     background:radial-gradient(900px 600px at 85% -10%,rgba(232,184,78,.10),transparent 60%),radial-gradient(700px 500px at -5% 110%,rgba(185,128,42,.06),transparent 60%)}
@@ -215,6 +225,10 @@
   .card .ico svg{width:22px;height:22px;stroke:var(--g2)}
   .card h3{font-size:1.15rem;margin-bottom:10px}
   .card p{color:var(--muted);font-size:.95rem}
+  .card-cta{display:inline-flex;align-items:center;gap:7px;margin-top:16px;text-decoration:none;
+    font-family:"Clash Display",sans-serif;font-weight:500;font-size:.86rem;color:var(--g2);
+    border-bottom:1px solid transparent;padding-bottom:2px;transition:border-color .25s,gap .25s}
+  .card-cta:hover{border-bottom-color:var(--g2);gap:12px}
 
   /* ============ CASOS ============ */
   .caso{background:var(--panel);border:1px solid var(--line-soft);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
@@ -381,7 +395,7 @@
       <li><a href="#faq">FAQ</a></li>
     </ul>
     <a class="btn btn-gold" href="https://wa.me/573184166638?text=Hola%20Level%20Media%2C%20quiero%20llevar%20mi%20marca%20a%20otro%20level." target="_blank" rel="noopener" data-analytics-location="header" data-service="general">Hablemos</a>
-    <button id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
+    <button id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobmenu"><span></span><span></span><span></span></button>
   </div>
 </header>
 <nav id="mobmenu">
@@ -407,12 +421,17 @@
   <div class="wrap">
     <span class="kicker">Agencia de marketing digital · Cali, Colombia</span>
     <h1>Llevamos tu marca a <span class="gold">otro level</span></h1>
-    <p class="lead">Transformamos marcas en experiencias digitales que conectan, venden y fidelizan. Estrategia, contenido creativo y publicidad efectiva para que tu negocio deje de ser invisible en redes.</p>
+    <p class="lead">Estrategia, contenido y pauta con producción propia: tenemos nuestro estudio audiovisual en Cali. Tu marca deja de ser invisible en redes y empieza a vender.</p>
     <div class="hero-ctas">
-      <a class="btn btn-gold" href="https://wa.me/573184166638?text=Hola%20Level%20Media%2C%20quiero%20llevar%20mi%20marca%20a%20otro%20level." target="_blank" rel="noopener" data-analytics-location="hero" data-service="general">
-        Escríbenos por WhatsApp
+      <a class="btn btn-gold" href="https://wa.me/573184166638?text=Hola%20Level%20Media%2C%20quiero%20agendar%20un%20diagn%C3%B3stico%20gratuito%20para%20mi%20marca." target="_blank" rel="noopener" data-analytics-location="hero" data-service="general">
+        Agenda un diagnóstico gratuito
       </a>
-      <a class="btn btn-ghost" href="#servicios">Ver servicios</a>
+      <a class="btn btn-ghost" href="#casos">Ver resultados</a>
+    </div>
+    <div class="hero-stats">
+      <div><b>1,4 M</b><span>de visualizaciones en un mes<br>para un solo cliente</span></div>
+      <div><b>Estudio propio</b><span>en Cali: fotografía, video<br>y set de entrevistas</span></div>
+      <div><b>Equipo completo</b><span>estrategia, community, foto,<br>video, UGC y pauta</span></div>
     </div>
   </div>
 </section>
@@ -429,28 +448,28 @@
   </div>
   <div class="track">
     <div class="set">
-      <div class="cl"><img src="img/clientes/dnl.png" alt="DNL · TotalEnergies" onerror="this.closest('.cl').classList.add('nologo')"><span>DNL · TotalEnergies</span></div><span class="dot">✦</span>
-      <div class="cl"><img src="img/clientes/arrayanes.png" alt="Los Arrayanes" onerror="this.closest('.cl').classList.add('nologo')"><span>Los Arrayanes</span></div><span class="dot">✦</span>
-      <div class="cl"><img src="img/clientes/guaguanquiza.png" alt="La Guaguanquiza" onerror="this.closest('.cl').classList.add('nologo')"><span>La Guaguanquiza</span></div><span class="dot">✦</span>
-      <div class="cl"><img src="img/clientes/viejobarril.png" alt="El Viejo Barril" onerror="this.closest('.cl').classList.add('nologo')"><span>El Viejo Barril</span></div><span class="dot">✦</span>
-      <div class="cl"><img src="img/clientes/koray.png" alt="Koray Cosmetic" onerror="this.closest('.cl').classList.add('nologo')"><span>Koray Cosmetic</span></div><span class="dot">✦</span>
-      <div class="cl"><img src="img/clientes/draemilse.png" alt="Dra. Emilse" onerror="this.closest('.cl').classList.add('nologo')"><span>Dra. Emilse</span></div><span class="dot">✦</span>
-      <div class="cl"><img src="img/clientes/surflys.png" alt="Surflys" onerror="this.closest('.cl').classList.add('nologo')"><span>Surflys</span></div><span class="dot">✦</span>
-      <div class="cl"><img src="img/clientes/jorgevalencia.png" alt="Jorge Valencia" onerror="this.closest('.cl').classList.add('nologo')"><span>Jorge Valencia</span></div><span class="dot">✦</span>
-      <div class="cl"><img src="img/clientes/evecams.png" alt="Evecams" onerror="this.closest('.cl').classList.add('nologo')"><span>Evecams</span></div><span class="dot">✦</span>
-      <div class="cl"><img src="img/clientes/fondadetadeo.png" alt="La Fonda de Tadeo" onerror="this.closest('.cl').classList.add('nologo')"><span>La Fonda de Tadeo</span></div><span class="dot">✦</span>
+      <div class="cl nologo"><span>DNL · TotalEnergies</span></div><span class="dot">✦</span>
+      <div class="cl nologo"><span>Los Arrayanes</span></div><span class="dot">✦</span>
+      <div class="cl nologo"><span>La Guaguanquiza</span></div><span class="dot">✦</span>
+      <div class="cl nologo"><span>El Viejo Barril</span></div><span class="dot">✦</span>
+      <div class="cl nologo"><span>Koray Cosmetic</span></div><span class="dot">✦</span>
+      <div class="cl nologo"><span>Dra. Emilse</span></div><span class="dot">✦</span>
+      <div class="cl nologo"><span>Surflys</span></div><span class="dot">✦</span>
+      <div class="cl nologo"><span>Jorge Valencia</span></div><span class="dot">✦</span>
+      <div class="cl"><img src="img/clientes/evecams.png" alt="Evecams" loading="lazy"><span>Evecams</span></div><span class="dot">✦</span>
+      <div class="cl nologo"><span>La Fonda de Tadeo</span></div><span class="dot">✦</span>
     </div>
     <div class="set" aria-hidden="true">
-      <div class="cl"><img src="img/clientes/dnl.png" alt="" onerror="this.closest('.cl').classList.add('nologo')"><span>DNL · TotalEnergies</span></div><span class="dot">✦</span>
-      <div class="cl"><img src="img/clientes/arrayanes.png" alt="" onerror="this.closest('.cl').classList.add('nologo')"><span>Los Arrayanes</span></div><span class="dot">✦</span>
-      <div class="cl"><img src="img/clientes/guaguanquiza.png" alt="" onerror="this.closest('.cl').classList.add('nologo')"><span>La Guaguanquiza</span></div><span class="dot">✦</span>
-      <div class="cl"><img src="img/clientes/viejobarril.png" alt="" onerror="this.closest('.cl').classList.add('nologo')"><span>El Viejo Barril</span></div><span class="dot">✦</span>
-      <div class="cl"><img src="img/clientes/koray.png" alt="" onerror="this.closest('.cl').classList.add('nologo')"><span>Koray Cosmetic</span></div><span class="dot">✦</span>
-      <div class="cl"><img src="img/clientes/draemilse.png" alt="" onerror="this.closest('.cl').classList.add('nologo')"><span>Dra. Emilse</span></div><span class="dot">✦</span>
-      <div class="cl"><img src="img/clientes/surflys.png" alt="" onerror="this.closest('.cl').classList.add('nologo')"><span>Surflys</span></div><span class="dot">✦</span>
-      <div class="cl"><img src="img/clientes/jorgevalencia.png" alt="" onerror="this.closest('.cl').classList.add('nologo')"><span>Jorge Valencia</span></div><span class="dot">✦</span>
-      <div class="cl"><img src="img/clientes/evecams.png" alt="" onerror="this.closest('.cl').classList.add('nologo')"><span>Evecams</span></div><span class="dot">✦</span>
-      <div class="cl"><img src="img/clientes/fondadetadeo.png" alt="" onerror="this.closest('.cl').classList.add('nologo')"><span>La Fonda de Tadeo</span></div><span class="dot">✦</span>
+      <div class="cl nologo"><span>DNL · TotalEnergies</span></div><span class="dot">✦</span>
+      <div class="cl nologo"><span>Los Arrayanes</span></div><span class="dot">✦</span>
+      <div class="cl nologo"><span>La Guaguanquiza</span></div><span class="dot">✦</span>
+      <div class="cl nologo"><span>El Viejo Barril</span></div><span class="dot">✦</span>
+      <div class="cl nologo"><span>Koray Cosmetic</span></div><span class="dot">✦</span>
+      <div class="cl nologo"><span>Dra. Emilse</span></div><span class="dot">✦</span>
+      <div class="cl nologo"><span>Surflys</span></div><span class="dot">✦</span>
+      <div class="cl nologo"><span>Jorge Valencia</span></div><span class="dot">✦</span>
+      <div class="cl"><img src="img/clientes/evecams.png" alt="Evecams" loading="lazy"><span>Evecams</span></div><span class="dot">✦</span>
+      <div class="cl nologo"><span>La Fonda de Tadeo</span></div><span class="dot">✦</span>
     </div>
   </div>
 </section>
@@ -468,31 +487,37 @@
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></div>
         <h3>Manejo de redes sociales</h3>
         <p>Estrategia, parrilla de contenido, reels, carruseles, historias y community management. Tu marca activa y creciendo todos los días.</p>
+        <a class="card-cta" href="https://wa.me/573184166638?text=Hola%20Level%20Media%2C%20quiero%20informaci%C3%B3n%20sobre%3A%20Manejo%20de%20redes%20sociales." target="_blank" rel="noopener" data-analytics-location="servicio" data-service="redes-sociales">Quiero información sobre este servicio <span aria-hidden="true">&rarr;</span></a>
       </div>
       <div class="card reveal">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div>
         <h3>Estrategias publicitarias</h3>
         <p>Pauta en Meta Ads con segmentación, ángulos creativos y optimización constante para convertir presupuesto en clientes.</p>
+        <a class="card-cta" href="https://wa.me/573184166638?text=Hola%20Level%20Media%2C%20quiero%20informaci%C3%B3n%20sobre%3A%20Estrategias%20publicitarias." target="_blank" rel="noopener" data-analytics-location="servicio" data-service="pauta">Quiero información sobre este servicio <span aria-hidden="true">&rarr;</span></a>
       </div>
       <div class="card reveal">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3"/></svg></div>
         <h3>Fotografía y video profesional</h3>
         <p>Producción audiovisual con equipo propio: grabación, dirección y edición de contenido a la altura de tu marca.</p>
+        <a class="card-cta" href="https://wa.me/573184166638?text=Hola%20Level%20Media%2C%20quiero%20informaci%C3%B3n%20sobre%3A%20Fotograf%C3%ADa%20y%20video%20profesional." target="_blank" rel="noopener" data-analytics-location="servicio" data-service="foto-video">Quiero información sobre este servicio <span aria-hidden="true">â</span></a>
       </div>
       <div class="card reveal">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="5" cy="5" r="3"/><circle cx="19" cy="5" r="3"/><circle cx="5" cy="19" r="3"/><circle cx="19" cy="19" r="3"/><rect x="9" y="9" width="6" height="6" rx="2"/></svg></div>
         <h3>Videos con drone</h3>
         <p>Tomas aéreas que le dan escala y cinematografía a tu negocio: locaciones, eventos, inmuebles y experiencias.</p>
+        <a class="card-cta" href="https://wa.me/573184166638?text=Hola%20Level%20Media%2C%20quiero%20informaci%C3%B3n%20sobre%3A%20Videos%20con%20drone." target="_blank" rel="noopener" data-analytics-location="servicio" data-service="drone">Quiero información sobre este servicio <span aria-hidden="true">&rarr;</span></a>
       </div>
       <div class="card reveal">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="2" y="3" width="20" height="15" rx="3"/><path d="M8 21h8M12 18v3"/><path d="M7 8l3 3-3 3M12 14h5"/></svg></div>
         <h3>Diseño de página web</h3>
         <p>Sitios y landing pages que respaldan tu marca y convierten visitas en conversaciones de venta.</p>
+        <a class="card-cta" href="https://wa.me/573184166638?text=Hola%20Level%20Media%2C%20quiero%20informaci%C3%B3n%20sobre%3A%20Dise%C3%B1o%20de%20p%C3%A1gina%20web." target="_blank" rel="noopener" data-analytics-location="servicio" data-service="web">Quiero información sobre este servicio <span aria-hidden="true">→</span></a>
       </div>
       <div class="card reveal">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-7 8-7s8 3 8 7"/></svg></div>
         <h3>Creadores de contenido UGC</h3>
         <p>Contenido con creadores que hablan el idioma de tu audiencia y generan confianza real en tu marca.</p>
+        <a class="card-cta" href="https://wa.me/573184166638?text=Hola%20Level%20Media%2C%20quiero%20informaci%C3%B3n%20sobre%3A%20Creadores%20de%20contenido%20UGC." target="_blank" rel="noopener" data-analytics-location="servicio" data-service="ugc">Quiero información sobre este servicio <span aria-hidden="true">&rarr;</span></a>
       </div>
     </div>
   </div>
@@ -637,11 +662,11 @@
       <a class="btn btn-gold" href="https://wa.me/573184166638?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Level%20Studio." target="_blank" rel="noopener" data-analytics-location="studio" data-service="level_studio">Conoce el estudio</a>
     </div>
     <div class="studio-gal reveal">
-      <figure><img src="img/estudio-3.jpg" alt="Recepción de Level Studio con el logo de Level Media en dorado" loading="lazy"></figure>
-      <figure><img src="img/estudio-2.jpg" alt="Fondo blanco infinito e iluminación profesional" loading="lazy"></figure>
-      <figure><img src="img/estudio-1.jpg" alt="Sesión fotográfica con iluminación de color en el estudio" loading="lazy"></figure>
-      <figure><img src="img/estudio-5.jpg" alt="Set de entrevistas y contenido de marca" loading="lazy"></figure>
-      <figure><img src="img/estudio-4.jpg" alt="Espacios de Level Studio en Cali" loading="lazy"></figure>
+      <figure tabindex="0" role="button" aria-label="Ampliar foto del estudio"><img src="img/estudio-3.jpg" alt="Recepción de Level Studio con el logo de Level Media en dorado" loading="lazy"></figure>
+      <figure tabindex="0" role="button" aria-label="Ampliar foto del estudio"><img src="img/estudio-2.jpg" alt="Fondo blanco infinito e iluminación profesional" loading="lazy"></figure>
+      <figure tabindex="0" role="button" aria-label="Ampliar foto del estudio"><img src="img/estudio-1.jpg" alt="Sesión fotográfica con iluminación de color en el estudio" loading="lazy"></figure>
+      <figure tabindex="0" role="button" aria-label="Ampliar foto del estudio"><img src="img/estudio-5.jpg" alt="Set de entrevistas y contenido de marca" loading="lazy"></figure>
+      <figure tabindex="0" role="button" aria-label="Ampliar foto del estudio"><img src="img/estudio-4.jpg" alt="Espacios de Level Studio en Cali" loading="lazy"></figure>
     </div>
   </div>
 </section>
@@ -700,12 +725,12 @@
       <h2>Resolvemos tus <span class="gold">dudas</span></h2>
     </div>
     <div class="faq">
-      <div class="qa"><button>¿Cómo empezamos a trabajar juntos?</button><div class="a"><p>Escríbenos por WhatsApp y agendamos una reunión de diagnóstico. Analizamos tu marca, tu competencia y tus objetivos, y te presentamos una propuesta a la medida.</p></div></div>
-      <div class="qa"><button>¿Qué incluye el manejo de redes sociales?</button><div class="a"><p>Análisis de cuentas, creación de estrategia, diseño de parrilla, producción de reels, carruseles e historias, community management y análisis de resultados mensual. El alcance exacto depende del plan que armemos para tu marca.</p></div></div>
-      <div class="qa"><button>¿Hacen publicidad pagada (pauta)?</button><div class="a"><p>Sí. Creamos y gestionamos campañas en Meta Ads (Instagram y Facebook) con segmentación, creativos y optimización constante. Para pauta recomendamos contar con un presupuesto mínimo de inversión publicitaria, aparte del servicio.</p></div></div>
-      <div class="qa"><button>¿Dónde están ubicados? ¿Atienden fuera de Cali?</button><div class="a"><p>Estamos en Cali, Colombia, donde también tenemos nuestro estudio de producción. Trabajamos con marcas de toda Colombia: la estrategia y la pauta se manejan 100% digital.</p></div></div>
-      <div class="qa"><button>¿Qué es Level Studio?</button><div class="a"><p>Es nuestro estudio fotográfico propio en Cali: iluminación profesional, fondo infinito, vestier, tocador estilo Hollywood, sala de juntas y cocina equipada. Ahí producimos el contenido de nuestros clientes con calidad de estudio.</p></div></div>
-      <div class="qa"><button>¿Cómo mido los resultados?</button><div class="a"><p>Cada mes tenemos una reunión de resultados donde revisamos las métricas de tus cuentas y campañas, ajustamos la estrategia y definimos los siguientes pasos. Transparencia total con los números.</p></div></div>
+      <div class="qa"><button aria-expanded="false">¿Cómo empezamos a trabajar juntos?</button><div class="a"><p>Escríbenos por WhatsApp y agendamos una reunión de diagnóstico. Analizamos tu marca, tu competencia y tus objetivos, y te presentamos una propuesta a la medida.</p></div></div>
+      <div class="qa"><button aria-expanded="false">¿Qué incluye el manejo de redes sociales?</button><div class="a"><p>Análisis de cuentas, creación de estrategia, diseño de parrilla, producción de reels, carruseles e historias, community management y análisis de resultados mensual. El alcance exacto depende del plan que armemos para tu marca.</p></div></div>
+      <div class="qa"><button aria-expanded="false">¿Hacen publicidad pagada (pauta)?</button><div class="a"><p>Sí. Creamos y gestionamos campañas en Meta Ads (Instagram y Facebook) con segmentación, creativos y optimización constante. Para pauta recomendamos contar con un presupuesto mínimo de inversión publicitaria, aparte del servicio.</p></div></div>
+      <div class="qa"><button aria-expanded="false">¿Dónde están ubicados? ¿Atienden fuera de Cali?</button><div class="a"><p>Estamos en Cali, Colombia, donde también tenemos nuestro estudio de producción. Trabajamos con marcas de toda Colombia: la estrategia y la pauta se manejan 100% digital.</p></div></div>
+      <div class="qa"><button aria-expanded="false">¿Qué es Level Studio?</button><div class="a"><p>Es nuestro estudio fotográfico propio en Cali: iluminación profesional, fondo infinito, vestier, tocador estilo Hollywood, sala de juntas y cocina equipada. Ahí producimos el contenido de nuestros clientes con calidad de estudio.</p></div></div>
+      <div class="qa"><button aria-expanded="false">¿Cómo mido los resultados?</button><div class="a"><p>Cada mes tenemos una reunión de resultados donde revisamos las métricas de tus cuentas y campañas, ajustamos la estrategia y definimos los siguientes pasos. Transparencia total con los números.</p></div></div>
     </div>
   </div>
 </section>
@@ -773,7 +798,7 @@
 </footer>
 
 <!-- Lightbox de la galería del estudio -->
-<div id="lb" role="dialog" aria-modal="true" aria-label="Foto ampliada del estudio">
+<div id="lb" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Foto ampliada del estudio">
   <button class="x" aria-label="Cerrar">✕</button>
   <button class="nav-b prev" aria-label="Anterior">‹</button>
   <img id="lb-img" src="" alt="">
@@ -785,19 +810,30 @@
 </a>
 
 <script>
-  // Menú móvil
+  // Menú móvil (informa su estado a lectores de pantalla)
   const burger = document.getElementById('burger');
   const mob = document.getElementById('mobmenu');
-  burger.addEventListener('click', () => mob.classList.toggle('open'));
-  mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mob.classList.remove('open')));
+  const pintarMenu = abierto => {
+    mob.classList.toggle('open', abierto);
+    burger.setAttribute('aria-expanded', String(abierto));
+    burger.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
+  };
+  burger.addEventListener('click', () => pintarMenu(!mob.classList.contains('open')));
+  mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => pintarMenu(false)));
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && mob.classList.contains('open')) { pintarMenu(false); burger.focus(); }
+  });
 
-  // FAQ acordeón
+  // FAQ acordeón (aria-expanded refleja qué pregunta está abierta)
   document.querySelectorAll('.qa button').forEach(btn => {
     btn.addEventListener('click', () => {
       const qa = btn.parentElement;
       const wasOpen = qa.classList.contains('open');
-      document.querySelectorAll('.qa').forEach(x => x.classList.remove('open'));
-      if (!wasOpen) qa.classList.add('open');
+      document.querySelectorAll('.qa').forEach(x => {
+        x.classList.remove('open');
+        x.querySelector('button').setAttribute('aria-expanded', 'false');
+      });
+      if (!wasOpen) { qa.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
     });
   });
 
@@ -827,20 +863,36 @@
   const pruebas = [...document.querySelectorAll('.prueba')].map(b => ({ src: b.dataset.prueba, alt: b.dataset.alt }));
   let lista = galeria, iFoto = 0;
 
+  let disparador = null;   // elemento que abrió el visor, para devolverle el foco al cerrar
+
   const abrir = i => {
     iFoto = (i + lista.length) % lista.length;
     lbImg.src = lista[iFoto].src;
     lbImg.alt = lista[iFoto].alt;
     lb.classList.add('open');
+    lb.removeAttribute('aria-hidden');
     lb.querySelectorAll('.nav-b').forEach(b => b.style.display = lista.length > 1 ? 'flex' : 'none');
     document.body.style.overflow = 'hidden';
+    // el resto de la página queda inerte: no se navega con Tab ni la leen los lectores
+    [...document.body.children].forEach(el => { if (el !== lb) el.setAttribute('inert', ''); });
+    lb.querySelector('.x').focus();
   };
-  const cerrar = () => { lb.classList.remove('open'); document.body.style.overflow = ''; };
+  const cerrar = () => {
+    lb.classList.remove('open');
+    lb.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    [...document.body.children].forEach(el => el.removeAttribute('inert'));
+    if (disparador) { disparador.focus(); disparador = null; }
+  };
 
-  document.querySelectorAll('.studio-gal figure').forEach((f, i) =>
-    f.addEventListener('click', () => { lista = galeria; abrir(i); }));
+  document.querySelectorAll('.studio-gal figure').forEach((f, i) => {
+    f.addEventListener('click', () => { disparador = f; lista = galeria; abrir(i); });
+    f.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); disparador = f; lista = galeria; abrir(i); }
+    });
+  });
   document.querySelectorAll('.prueba').forEach((b, i) =>
-    b.addEventListener('click', () => { lista = pruebas; abrir(i); }));
+    b.addEventListener('click', () => { disparador = b; lista = pruebas; abrir(i); }));
 
   lb.querySelector('.x').addEventListener('click', cerrar);
   lb.querySelector('.prev').addEventListener('click', e => { e.stopPropagation(); abrir(iFoto - 1); });
