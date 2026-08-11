@@ -157,7 +157,11 @@
   /* video showreel de fondo (img/showreel.mp4 — pendiente de Jorge) */
   .hero-bg{position:absolute;inset:0;z-index:-2;opacity:0;transition:opacity 1.2s ease}
   .hero-bg.on{opacity:1}
-  .hero-bg video{width:100%;height:100%;object-fit:cover;object-position:center center}
+  /* El archivo llena todo el ancho, pero su composición pesa ~6% hacia la izquierda.
+     Se amplía un poco y se corre a la derecha para que el contenido quede centrado.
+     Si algún día el showreel se exporta centrado, basta con borrar la línea 'transform'. */
+  .hero-bg video{width:100%;height:100%;object-fit:cover;object-position:center center;
+    transform:scale(1.09) translateX(5.8%)}
   /* velo parejo: antes la izquierda quedaba al 94% y la derecha al 42%, y el video se veía descentrado */
   .hero-bg .scrim{position:absolute;inset:0;
     background:linear-gradient(90deg,rgba(18,16,16,.90) 0%,rgba(18,16,16,.78) 45%,rgba(18,16,16,.70) 100%),
