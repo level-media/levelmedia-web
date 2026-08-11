@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Agencia de Marketing Digital en Cali | Level Media</title>
 <meta name="description" content="Estrategia, contenido y pauta para marcas en Cali. Estudio audiovisual propio y resultados de hasta 1,4 millones de visualizaciones en un mes.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#121010">
 <link rel="icon" type="image/png" href="img/favicon.png">
 <link rel="canonical" href="https://levelmediaagencia.com/">
 <meta property="og:type" content="website">
@@ -15,11 +17,14 @@
 <meta property="og:image" content="https://levelmediaagencia.com/img/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Level Media, agencia de marketing digital en Cali">
 <meta property="og:locale" content="es_CO">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Agencia de Marketing Digital en Cali | Level Media">
 <meta name="twitter:description" content="Estrategia, contenido y pauta con estudio audiovisual propio. Resultados de hasta 1,4 millones de visualizaciones en un mes.">
 <meta name="twitter:image" content="https://levelmediaagencia.com/img/og.jpg">
+<meta name="twitter:image:alt" content="Level Media, agencia de marketing digital en Cali">
+<link rel="preload" as="image" href="img/hero-earth.webp" type="image/webp" fetchpriority="high">
 
 <!-- ==================== GOOGLE ANALYTICS 4 ==================== -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3G45KMG39K"></script>
@@ -32,6 +37,8 @@
   });
 </script>
 
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
@@ -44,11 +51,22 @@
   "name": "Level Media",
   "description": "Agencia de marketing digital en Cali, Colombia. Manejo de redes sociales, estrategias publicitarias, fotografía y video profesional, videos con drone y diseño de páginas web.",
   "url": "https://levelmediaagencia.com/",
+  "image": "https://levelmediaagencia.com/img/og.jpg",
+  "logo": "https://levelmediaagencia.com/img/logo-blanco.png",
   "telephone": "+573184166638",
   "address": {"@type": "PostalAddress", "addressLocality": "Cali", "addressRegion": "Valle del Cauca", "addressCountry": "CO"},
   "sameAs": ["https://www.instagram.com/level_mediaoficial", "https://www.tiktok.com/@levelmedia_agencia"],
   "areaServed": "Colombia",
   "knowsAbout": ["Marketing digital", "Redes sociales", "Meta Ads", "Producción audiovisual", "Fotografía profesional", "Diseño web"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Level Media",
+  "alternateName": "Level Media Agencia",
+  "url": "https://levelmediaagencia.com/"
 }
 </script>
 <script type="application/ld+json">
@@ -94,6 +112,9 @@
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px;position:relative;z-index:1}
   img{max-width:100%;display:block}
   a{color:inherit}
+  .skip-link{position:fixed;left:16px;top:12px;z-index:100;background:var(--g2);color:#181206;padding:10px 14px;border-radius:10px;
+    font-weight:700;text-decoration:none;transform:translateY(-160%);transition:transform .2s}
+  .skip-link:focus{transform:none}
 
   .kicker{font-family:"JetBrains Mono",monospace;font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--g2)}
   h1,h2,h3{font-family:"Clash Display",sans-serif;font-weight:600;line-height:1.12}
@@ -138,11 +159,14 @@
   .nav-links a:hover::after{transform:scaleX(1)}
   @media (prefers-reduced-motion: reduce){
     header,.brand b,.hero .kicker,.hero h1,.hero p.lead,.hero .hero-ctas,.hero .gold,.orb,
+    .network-route-flow,.network-orbit-flow,.network-node,.network-hub,.headline-main,.lead-signal,.metric-counter.counted,
     .clients .track,.ticker .track,.mlink .track,#wa-float::before{animation:none}
     .hero .kicker,.hero h1,.hero p.lead,.hero .hero-ctas{opacity:1;transform:none}
+    .hero .wrap,.hero-bg{transform:none!important;opacity:1!important}
+    .network-step{opacity:0!important}
   }
   .nav .btn{padding:11px 20px;font-size:.9rem}
-  #burger{display:none;background:none;border:0;cursor:pointer;padding:8px}
+  #burger{display:none;background:none;border:0;cursor:pointer;padding:8px;width:44px;height:44px}
   #burger span{display:block;width:24px;height:2px;background:var(--g2);margin:5px 0;border-radius:2px;transition:.25s}
   #mobmenu{display:none;position:fixed;inset:72px 0 0 0;background:rgba(18,16,16,.97);z-index:49;padding:34px 26px;flex-direction:column;gap:8px}
   #mobmenu a{text-decoration:none;font-family:"Clash Display",sans-serif;font-size:1.35rem;padding:14px 0;border-bottom:1px solid var(--line-soft);color:var(--text)}
@@ -151,24 +175,47 @@
   /* ============ HERO ============ */
   /* el header mide 72px: el padding superior evita que el titular quede debajo */
   .hero{padding:92px 0 80px;position:relative;overflow:hidden;min-height:min(80vh,760px);display:flex;align-items:center}
-  .hero .wrap{width:100%}
+  .hero .wrap{width:100%;position:relative;z-index:3;transform:translate3d(0,var(--copy-y,0),0);opacity:var(--copy-opacity,1);will-change:transform,opacity}
   .hero h1{font-size:clamp(2.6rem,7vw,5rem);max-width:900px;text-transform:uppercase;line-height:1.02}
 
-  /* video showreel de fondo (img/showreel.mp4 — pendiente de Jorge) */
-  .hero-bg{position:absolute;inset:0;z-index:-2;opacity:0;transition:opacity 1.2s ease}
-  .hero-bg.on{opacity:1}
-  /* El archivo llena todo el ancho, pero su composición pesa ~6% hacia la izquierda.
-     Se amplía un poco y se corre a la derecha para que el contenido quede centrado.
-     Si algún día el showreel se exporta centrado, basta con borrar la línea 'transform'. */
-  .hero-bg video{width:100%;height:100%;object-fit:cover;object-position:center center;
-    transform:scale(1.09) translateX(5.8%)}
-  /* velo parejo: antes la izquierda quedaba al 94% y la derecha al 42%, y el video se veía descentrado */
-  .hero-bg .scrim{position:absolute;inset:0;
-    background:linear-gradient(90deg,rgba(18,16,16,.90) 0%,rgba(18,16,16,.78) 45%,rgba(18,16,16,.70) 100%),
-               linear-gradient(0deg,var(--bg) 0%,transparent 30%),
+  /* La Tierra representa el alcance; la red dorada, la gestión que conecta marcas y audiencias. */
+  .hero-bg{position:absolute;inset:0;z-index:-2;opacity:0;transition:opacity 1.2s ease;background:#08090b;pointer-events:none;
+    transform:translate3d(0,var(--scene-y,0),0) scale(var(--scene-scale,1));transform-origin:68% 48%;will-change:transform,opacity}
+  .hero-bg.on{opacity:var(--scene-opacity,1)}
+  .hero-bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:right center}
+  .hero-bg .scrim{position:absolute;inset:0;z-index:2;
+    background:linear-gradient(90deg,rgba(18,16,16,.97) 0%,rgba(18,16,16,.90) 34%,rgba(18,16,16,.44) 58%,rgba(18,16,16,.08) 100%),
+               linear-gradient(0deg,var(--bg) 0%,rgba(18,16,16,.72) 12%,transparent 34%),
                linear-gradient(180deg,rgba(18,16,16,.82) 0%,rgba(18,16,16,.35) 14%,transparent 26%)}
+  .hero-network{position:absolute;inset:0;z-index:1;overflow:hidden;mix-blend-mode:screen}
+  .hero-network svg{width:100%;height:100%;display:block}
+  .network-route-base,.network-route-flow,.network-orbit-base,.network-orbit-flow{fill:none;vector-effect:non-scaling-stroke}
+  .network-route-base{stroke:rgba(232,184,78,.24);stroke-width:1}
+  .network-route-flow{stroke:url(#network-gold);stroke-width:2;stroke-linecap:round;stroke-dasharray:.075 .925;
+    animation:network-flow var(--speed,5s) linear var(--delay,0s) infinite;filter:drop-shadow(0 0 5px rgba(255,207,103,.85))}
+  .network-orbits{opacity:.9}
+  .network-orbit-base{stroke:rgba(232,184,78,.38);stroke-width:1.15}
+  .network-orbit-flow{stroke:url(#network-gold);stroke-width:2.2;stroke-linecap:round;stroke-dasharray:.13 .87;
+    animation:network-flow var(--speed,7s) linear var(--delay,0s) infinite;filter:drop-shadow(0 0 7px rgba(255,207,103,.78))}
+  .network-node{transform-box:fill-box;transform-origin:center;animation:network-pulse 2.8s ease-in-out var(--delay,0s) infinite}
+  .network-node .ring,.network-hub .ring{fill:none;stroke:rgba(244,195,88,.55);stroke-width:1.3;vector-effect:non-scaling-stroke}
+  .network-node .dot{fill:#f4c358;filter:drop-shadow(0 0 5px #f4c358)}
+  .network-hub{transform-box:fill-box;transform-origin:center;animation:network-pulse 2s ease-in-out infinite}
+  .network-hub .core{fill:#fff1b0;filter:drop-shadow(0 0 8px #e8b84e)}
+  .network-label{fill:rgba(255,225,148,.78);font:600 12px "JetBrains Mono",monospace;letter-spacing:.18em}
+  .network-step{fill:rgba(255,232,170,.92);font:600 13px "JetBrains Mono",monospace;letter-spacing:.22em;
+    filter:drop-shadow(0 0 8px rgba(232,184,78,.75));transition:opacity .12s linear}
+  .story-strategy{opacity:var(--story-strategy,0)}
+  .story-content{opacity:var(--story-content,0)}
+  .story-pauta{opacity:var(--story-pauta,0)}
+  .story-outcome{opacity:var(--story-outcome,0);fill:#fff0ad;font-size:15px;letter-spacing:.16em}
+  @keyframes network-flow{to{stroke-dashoffset:-1}}
+  @keyframes network-pulse{0%,100%{opacity:.55;transform:scale(.86)}50%{opacity:1;transform:scale(1.13)}}
   .hero p.lead{max-width:600px;margin:22px 0 34px;color:var(--muted);font-size:1.12rem}
   .hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-trust{display:flex;gap:8px 18px;flex-wrap:wrap;margin-top:14px;color:var(--muted-2);font-size:.78rem}
+  .hero-trust span{display:inline-flex;align-items:center;gap:7px}
+  .hero-trust span::before{content:"✓";color:var(--g2);font-weight:700}
 
   /* entrada escalonada del hero */
   @keyframes rise{to{opacity:1;transform:none}}
@@ -180,6 +227,14 @@
   /* oro fluyendo en el titular */
   .hero .gold{background-size:220% auto;animation:rise .8s cubic-bezier(.22,.8,.3,1) forwards,gold-flow 4.5s linear .8s infinite}
   @keyframes gold-flow{to{background-position:220% center}}
+  .headline-main{color:transparent;-webkit-text-fill-color:transparent;background:linear-gradient(105deg,#f7f6f4 0%,#f7f6f4 38%,#f2d488 49%,#fff 53%,#f7f6f4 64%);
+    background-size:260% 100%;background-position:120% center;-webkit-background-clip:text;background-clip:text;
+    animation:headline-shimmer 6.2s ease-in-out 1.2s infinite}
+  .lead-signal{color:#d9c28a;animation:lead-signal 5.4s ease-in-out 1s infinite}
+  .hero .kicker{animation:rise .8s cubic-bezier(.22,.8,.3,1) forwards,kicker-glow 4.8s ease-in-out 1s infinite}
+  @keyframes headline-shimmer{0%,62%,100%{background-position:120% center}82%{background-position:-35% center}}
+  @keyframes lead-signal{0%,100%{color:#d9c28a;text-shadow:none}50%{color:#fff0ad;text-shadow:0 0 14px rgba(232,184,78,.32)}}
+  @keyframes kicker-glow{0%,100%{color:var(--g2);text-shadow:none}50%{color:#ffe29a;text-shadow:0 0 18px rgba(232,184,78,.38)}}
 
   /* esferas de luz flotantes */
   .orb{position:absolute;border-radius:50%;filter:blur(85px);pointer-events:none;z-index:-1}
@@ -231,7 +286,7 @@
   .card .ico svg{width:22px;height:22px;stroke:var(--g2)}
   .card h3{font-size:1.15rem;margin-bottom:10px}
   .card p{color:var(--muted);font-size:.95rem}
-  .card-cta{display:inline-flex;align-items:center;gap:7px;margin-top:16px;text-decoration:none;
+  .card-cta{display:inline-flex;align-items:center;gap:7px;min-height:44px;margin-top:16px;text-decoration:none;
     font-family:"Clash Display",sans-serif;font-weight:500;font-size:.86rem;color:var(--g2);
     border-bottom:1px solid transparent;padding-bottom:2px;transition:border-color .25s,gap .25s}
   .card-cta:hover{border-bottom-color:var(--g2);gap:12px}
@@ -250,6 +305,9 @@
   .mock .mk{font-family:"JetBrains Mono",monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
   .mock b{font-family:"Clash Display",sans-serif;font-weight:700;font-size:2.7rem;line-height:1.1;
     background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .metric-counter{font-variant-numeric:tabular-nums;will-change:contents,transform,filter}
+  .metric-counter.counted{animation:metric-pop .42s cubic-bezier(.22,.8,.3,1)}
+  @keyframes metric-pop{0%{transform:scale(.96);filter:brightness(1)}60%{transform:scale(1.035);filter:brightness(1.28)}100%{transform:none;filter:none}}
   .mock .up{color:#7fd98f;font-size:.85rem;font-weight:700}
   .mock .sub{color:var(--muted-2);font-size:.78rem}
   .mock .ribbon{position:absolute;top:22px;right:-52px;transform:rotate(33deg);background:rgba(232,184,78,.92);color:#181206;
@@ -364,10 +422,13 @@
 
   /* WhatsApp flotante */
   #wa-float{position:fixed;bottom:24px;right:24px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25D366;
-    display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(37,211,102,.4);transition:transform .2s}
-  #wa-float::before{content:"";position:absolute;inset:0;border-radius:50%;background:rgba(37,211,102,.45);z-index:-1;animation:pulse 2.4s ease-out infinite}
+    display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(37,211,102,.4);
+    opacity:0;visibility:hidden;pointer-events:none;transform:translateY(12px);transition:transform .2s,opacity .2s,visibility .2s}
+  #wa-float.visible{opacity:1;visibility:visible;pointer-events:auto;transform:none}
+  #wa-float::before{content:"";position:absolute;inset:0;border-radius:50%;background:rgba(37,211,102,.45);z-index:-1}
+  #wa-float.visible::before{animation:pulse 2.4s ease-out infinite}
   @keyframes pulse{0%{transform:scale(1);opacity:.8}70%{transform:scale(1.7);opacity:0}100%{transform:scale(1.7);opacity:0}}
-  #wa-float:hover{transform:scale(1.08)}
+  #wa-float.visible:hover{transform:scale(1.08)}
   #wa-float svg{width:30px;height:30px;fill:#fff}
 
   .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
@@ -379,6 +440,8 @@
     .team{grid-template-columns:repeat(3,1fr)}
     .studio-grid{grid-template-columns:1fr;gap:36px}
     .studio-feats{columns:1}
+    .hero-bg .scrim{background:linear-gradient(90deg,rgba(18,16,16,.94),rgba(18,16,16,.58)),linear-gradient(0deg,var(--bg),transparent 38%)}
+    .network-label{display:none}
   }
   @media(max-width:640px){
     .nav-links,.nav .btn{display:none}
@@ -389,15 +452,18 @@
     .hero{padding:70px 0 60px}
     .sec{padding:64px 0}
     .hero-stats{gap:24px}
+    .hero-trust{gap:6px 14px}
+    #wa-float{right:18px;bottom:max(18px,env(safe-area-inset-bottom));width:54px;height:54px}
   }
 </style>
 </head>
 <body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
 
 <header>
   <div class="wrap nav">
-    <a class="brand" href="#">
-      <img src="img/simbolo.png" alt="Level Media">
+    <a class="brand" href="#contenido" aria-label="Level Media, ir al inicio">
+      <img src="img/simbolo.png" alt="Level Media" width="512" height="434" decoding="async">
       <span><b>LEVEL&nbsp;MEDIA</b><small>AGENCIA · CALI</small></span>
     </a>
     <ul class="nav-links">
@@ -421,25 +487,71 @@
 </nav>
 
 <!-- ============ HERO ============ -->
-<section class="hero">
-  <!-- Showreel de fondo: colocar el archivo en img/showreel.mp4 (horizontal, 15-25s, sin audio, <10MB).
-       Mientras no exista, la página muestra el fondo dorado normal. -->
-  <div class="hero-bg" id="hero-bg">
-    <!-- El src se asigna por JS: así el video NO se descarga en celular ni con ahorro de datos. -->
-    <video id="showreel" autoplay muted loop playsinline preload="auto" data-src="img/showreel.mp4"></video>
+<section class="hero" id="contenido">
+  <div class="hero-bg on" id="hero-bg" aria-hidden="true">
+    <img id="hero-earth" src="img/hero-earth.webp" alt="" width="1680" height="933" fetchpriority="high" decoding="async">
     <div class="scrim"></div>
+    <div class="hero-network">
+      <svg viewBox="0 0 1680 933" preserveAspectRatio="xMaxYMid slice" focusable="false" role="presentation">
+        <defs>
+          <linearGradient id="network-gold" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#b9802a"/>
+            <stop offset=".52" stop-color="#fff0ad"/>
+            <stop offset="1" stop-color="#e8b84e"/>
+          </linearGradient>
+        </defs>
+        <g class="network-orbits">
+          <ellipse class="network-orbit-base" cx="1260" cy="500" rx="530" ry="260" transform="rotate(-6 1260 500)"/>
+          <ellipse class="network-orbit-flow" pathLength="1" style="--speed:7.5s;--delay:-1.8s" cx="1260" cy="500" rx="530" ry="260" transform="rotate(-6 1260 500)"/>
+          <ellipse class="network-orbit-base" cx="1260" cy="505" rx="470" ry="360" transform="rotate(27 1260 505)"/>
+          <ellipse class="network-orbit-flow" pathLength="1" style="--speed:8.4s;--delay:-4.2s" cx="1260" cy="505" rx="470" ry="360" transform="rotate(27 1260 505)"/>
+          <ellipse class="network-orbit-base" cx="1260" cy="500" rx="555" ry="170" transform="rotate(18 1260 500)"/>
+          <ellipse class="network-orbit-flow" pathLength="1" style="--speed:6.8s;--delay:-3.1s" cx="1260" cy="500" rx="555" ry="170" transform="rotate(18 1260 500)"/>
+        </g>
+        <g>
+          <path class="network-route-base" d="M1188 565 C1100 500 1035 460 1055 405"/>
+          <path class="network-route-flow" pathLength="1" style="--speed:4.4s;--delay:-.5s" d="M1188 565 C1100 500 1035 460 1055 405"/>
+          <path class="network-route-base" d="M1188 565 C1150 455 1165 385 1230 320"/>
+          <path class="network-route-flow" pathLength="1" style="--speed:5.2s;--delay:-2.1s" d="M1188 565 C1150 455 1165 385 1230 320"/>
+          <path class="network-route-base" d="M1188 565 C1205 410 1290 275 1400 220"/>
+          <path class="network-route-flow" pathLength="1" style="--speed:5.8s;--delay:-1.2s" d="M1188 565 C1205 410 1290 275 1400 220"/>
+          <path class="network-route-base" d="M1188 565 C1310 580 1390 620 1450 675"/>
+          <path class="network-route-flow" pathLength="1" style="--speed:4.8s;--delay:-3s" d="M1188 565 C1310 580 1390 620 1450 675"/>
+          <path class="network-route-base" d="M1188 565 C1100 570 1035 558 955 520"/>
+          <path class="network-route-flow" pathLength="1" style="--speed:4.9s;--delay:-1.7s" d="M1188 565 C1100 570 1035 558 955 520"/>
+        </g>
+        <g class="network-hub" transform="translate(1188 565)">
+          <circle class="ring" r="17"/><circle class="ring" r="9"/><circle class="core" r="4.5"/>
+        </g>
+        <text class="network-label" x="1215" y="570">CALI · LEVEL</text>
+        <text class="network-step story-strategy" x="1110" y="205">ESTRATEGIA</text>
+        <text class="network-step story-content" x="1450" y="385">CONTENIDO</text>
+        <text class="network-step story-pauta" x="1450" y="720">PAUTA</text>
+        <text class="network-step story-outcome" x="1040" y="790">CONEXIÓN → CONVERSIÓN</text>
+        <g class="network-node" style="--delay:-.4s" transform="translate(1055 405)"><circle class="ring" r="11"/><circle class="dot" r="3"/></g>
+        <g class="network-node" style="--delay:-1.1s" transform="translate(1230 320)"><circle class="ring" r="11"/><circle class="dot" r="3"/></g>
+        <g class="network-node" style="--delay:-1.8s" transform="translate(1400 220)"><circle class="ring" r="11"/><circle class="dot" r="3"/></g>
+        <g class="network-node" style="--delay:-2.2s" transform="translate(1450 675)"><circle class="ring" r="11"/><circle class="dot" r="3"/></g>
+        <g class="network-node" style="--delay:-1.5s" transform="translate(955 520)"><circle class="ring" r="11"/><circle class="dot" r="3"/></g>
+      </svg>
+    </div>
   </div>
   <div class="orb orb-1"></div>
   <div class="orb orb-2"></div>
   <div class="wrap">
     <span class="kicker">Agencia de marketing digital · Cali, Colombia</span>
-    <h1>Llevamos tu marca a <span class="gold">otro level</span></h1>
-    <p class="lead">Estrategia, contenido y pauta con producción propia: tenemos nuestro estudio audiovisual en Cali. Tu marca deja de ser invisible en redes y empieza a vender.</p>
+    <h1><span class="headline-main">Llevamos tu marca a</span> <span class="gold">otro level</span></h1>
+    <p class="lead"><span class="lead-signal">Estrategia, contenido y pauta</span> con producción propia: tenemos nuestro estudio audiovisual en Cali. Tu marca deja de ser invisible en redes y empieza a vender.</p>
     <div class="hero-ctas">
       <a class="btn btn-gold" href="https://wa.me/573184166638?text=Hola%20Level%20Media%2C%20quiero%20agendar%20un%20diagn%C3%B3stico%20gratuito%20para%20mi%20marca." target="_blank" rel="noopener" data-analytics-location="hero" data-service="general">
         Agenda un diagnóstico gratuito
       </a>
       <a class="btn btn-ghost" href="#casos">Ver resultados</a>
+    </div>
+    <div class="hero-trust" aria-label="Condiciones del diagnóstico">
+      <span>Respuesta el mismo día</span>
+      <span>Diagnóstico sin costo</span>
+      <span>Sin compromiso</span>
     </div>
     <div class="hero-stats">
       <div><b>1,4 M</b><span>de visualizaciones en un mes<br>para un solo cliente</span></div>
@@ -469,7 +581,7 @@
       <div class="cl nologo"><span>Dra. Emilse</span></div><span class="dot">✦</span>
       <div class="cl nologo"><span>Surflys</span></div><span class="dot">✦</span>
       <div class="cl nologo"><span>Jorge Valencia</span></div><span class="dot">✦</span>
-      <div class="cl"><img src="img/clientes/evecams.png" alt="Evecams" loading="lazy"><span>Evecams</span></div><span class="dot">✦</span>
+      <div class="cl"><img src="img/clientes/evecams.png" alt="Evecams" width="361" height="197" loading="lazy" decoding="async"><span>Evecams</span></div><span class="dot">✦</span>
       <div class="cl nologo"><span>La Fonda de Tadeo</span></div><span class="dot">✦</span>
     </div>
     <div class="set" aria-hidden="true">
@@ -481,7 +593,7 @@
       <div class="cl nologo"><span>Dra. Emilse</span></div><span class="dot">✦</span>
       <div class="cl nologo"><span>Surflys</span></div><span class="dot">✦</span>
       <div class="cl nologo"><span>Jorge Valencia</span></div><span class="dot">✦</span>
-      <div class="cl"><img src="img/clientes/evecams.png" alt="Evecams" loading="lazy"><span>Evecams</span></div><span class="dot">✦</span>
+      <div class="cl"><img src="img/clientes/evecams.png" alt="Evecams" width="361" height="197" loading="lazy" decoding="async"><span>Evecams</span></div><span class="dot">✦</span>
       <div class="cl nologo"><span>La Fonda de Tadeo</span></div><span class="dot">✦</span>
     </div>
   </div>
@@ -512,7 +624,7 @@
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="3"/></svg></div>
         <h3>Fotografía y video profesional</h3>
         <p>Producción audiovisual con equipo propio: grabación, dirección y edición de contenido a la altura de tu marca.</p>
-        <a class="card-cta" href="https://wa.me/573184166638?text=Hola%20Level%20Media%2C%20quiero%20informaci%C3%B3n%20sobre%3A%20Fotograf%C3%ADa%20y%20video%20profesional." target="_blank" rel="noopener" data-analytics-location="servicio" data-service="foto-video">Quiero información sobre este servicio <span aria-hidden="true">â</span></a>
+        <a class="card-cta" href="https://wa.me/573184166638?text=Hola%20Level%20Media%2C%20quiero%20informaci%C3%B3n%20sobre%3A%20Fotograf%C3%ADa%20y%20video%20profesional." target="_blank" rel="noopener" data-analytics-location="servicio" data-service="foto-video">Quiero información sobre este servicio <span aria-hidden="true">&rarr;</span></a>
       </div>
       <div class="card reveal">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="5" cy="5" r="3"/><circle cx="19" cy="5" r="3"/><circle cx="5" cy="19" r="3"/><circle cx="19" cy="19" r="3"/><rect x="9" y="9" width="6" height="6" rx="2"/></svg></div>
@@ -556,7 +668,7 @@
           <button class="prueba" data-prueba="img/casos/fonda.jpg" data-alt="Resultados reales — La Fonda de Tadeo"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>Ver prueba</button>
           <div class="mock">
             <span class="mk">Visualizaciones · primer mes</span>
-            <b>321,8 mil</b>
+            <b class="metric-counter" data-counter="321800" data-divisor="1000" data-decimals="1" data-suffix=" mil" aria-label="321,8 mil visualizaciones">321,8 mil</b>
             <span class="up">▲ 1.100 seguidores nuevos</span>
             <span class="sub">Sin inversión en pauta — 100% orgánico</span>
           </div>
@@ -573,7 +685,7 @@
           <button class="prueba" data-prueba="img/casos/arrayanes.jpg" data-alt="Resultados reales — Los Arrayanes"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>Ver prueba</button>
           <div class="mock">
             <span class="mk">Visualizaciones · 28 días</span>
-            <b>1,4 mill.</b>
+            <b class="metric-counter" data-counter="1400000" data-divisor="1000000" data-decimals="1" data-suffix=" mill." aria-label="1,4 millones de visualizaciones">1,4 mill.</b>
             <span class="up">▲ +649% vs. el mes anterior</span>
             <span class="sub">42 mil interacciones (+945%)</span>
           </div>
@@ -590,7 +702,7 @@
           <button class="prueba" data-prueba="img/casos/guaguanquiza.jpg" data-alt="Resultados reales — La Guaguanquiza"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>Ver prueba</button>
           <div class="mock">
             <span class="mk">Visualizaciones · 30 días</span>
-            <b>972.997</b>
+            <b class="metric-counter" data-counter="972997" data-divisor="1" data-decimals="0" data-suffix="" aria-label="972.997 visualizaciones">972.997</b>
             <span class="up">▲ 873.816 cuentas alcanzadas (+89,5%)</span>
             <span class="sub">Sin inversión en pauta — 100% orgánico</span>
           </div>
@@ -675,11 +787,11 @@
       <a class="btn btn-gold" href="https://wa.me/573184166638?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Level%20Studio." target="_blank" rel="noopener" data-analytics-location="studio" data-service="level_studio">Conoce el estudio</a>
     </div>
     <div class="studio-gal reveal">
-      <figure tabindex="0" role="button" aria-label="Ampliar foto del estudio"><img src="img/estudio-3.jpg" alt="Recepción de Level Studio con el logo de Level Media en dorado" loading="lazy"></figure>
-      <figure tabindex="0" role="button" aria-label="Ampliar foto del estudio"><img src="img/estudio-2.jpg" alt="Fondo blanco infinito e iluminación profesional" loading="lazy"></figure>
-      <figure tabindex="0" role="button" aria-label="Ampliar foto del estudio"><img src="img/estudio-1.jpg" alt="Sesión fotográfica con iluminación de color en el estudio" loading="lazy"></figure>
-      <figure tabindex="0" role="button" aria-label="Ampliar foto del estudio"><img src="img/estudio-5.jpg" alt="Set de entrevistas y contenido de marca" loading="lazy"></figure>
-      <figure tabindex="0" role="button" aria-label="Ampliar foto del estudio"><img src="img/estudio-4.jpg" alt="Espacios de Level Studio en Cali" loading="lazy"></figure>
+      <figure tabindex="0" role="button" aria-label="Ampliar foto del estudio"><img src="img/estudio-3.jpg" alt="Recepción de Level Studio con el logo de Level Media en dorado" width="1400" height="934" loading="lazy" decoding="async"></figure>
+      <figure tabindex="0" role="button" aria-label="Ampliar foto del estudio"><img src="img/estudio-2.jpg" alt="Fondo blanco infinito e iluminación profesional" width="1400" height="934" loading="lazy" decoding="async"></figure>
+      <figure tabindex="0" role="button" aria-label="Ampliar foto del estudio"><img src="img/estudio-1.jpg" alt="Sesión fotográfica con iluminación de color en el estudio" width="1400" height="933" loading="lazy" decoding="async"></figure>
+      <figure tabindex="0" role="button" aria-label="Ampliar foto del estudio"><img src="img/estudio-5.jpg" alt="Set de entrevistas y contenido de marca" width="1120" height="1400" loading="lazy" decoding="async"></figure>
+      <figure tabindex="0" role="button" aria-label="Ampliar foto del estudio"><img src="img/estudio-4.jpg" alt="Espacios de Level Studio en Cali" width="1400" height="934" loading="lazy" decoding="async"></figure>
     </div>
   </div>
 </section>
@@ -695,28 +807,28 @@
     <div class="testis">
       <figure class="testi-card reveal">
         <div class="testi" data-yt="z-V3MMH9T5o">
-          <img src="https://i.ytimg.com/vi/z-V3MMH9T5o/oardefault.jpg" alt="Ángela Garzón, de Los Arrayanes, en su testimonio en video" loading="lazy" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/z-V3MMH9T5o/hqdefault.jpg'">
+          <img src="https://i.ytimg.com/vi/z-V3MMH9T5o/oardefault.jpg" alt="Ángela Garzón, de Los Arrayanes, en su testimonio en video" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/z-V3MMH9T5o/hqdefault.jpg'">
           <button class="play" aria-label="Reproducir el testimonio de Ángela Garzón, de Los Arrayanes"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z"/></svg></button>
         </div>
         <figcaption><b>Ángela Garzón</b><span>Los Arrayanes</span><em>Marketing digital</em></figcaption>
       </figure>
       <figure class="testi-card reveal">
         <div class="testi" data-yt="QU6H_-rG0UU">
-          <img src="https://i.ytimg.com/vi/QU6H_-rG0UU/oardefault.jpg" alt="DJ Holmes en su testimonio en video" loading="lazy" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/QU6H_-rG0UU/hqdefault.jpg'">
+          <img src="https://i.ytimg.com/vi/QU6H_-rG0UU/oardefault.jpg" alt="DJ Holmes en su testimonio en video" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/QU6H_-rG0UU/hqdefault.jpg'">
           <button class="play" aria-label="Reproducir el testimonio de DJ Holmes"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z"/></svg></button>
         </div>
         <figcaption><b>DJ Holmes</b><span>Artista</span><em>Producción audiovisual</em></figcaption>
       </figure>
       <figure class="testi-card reveal">
         <div class="testi" data-yt="6PYN_3X6PiU">
-          <img src="https://i.ytimg.com/vi/6PYN_3X6PiU/oardefault.jpg" alt="La doctora Lina Guerrero en su testimonio en video" loading="lazy" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/6PYN_3X6PiU/hqdefault.jpg'">
+          <img src="https://i.ytimg.com/vi/6PYN_3X6PiU/oardefault.jpg" alt="La doctora Lina Guerrero en su testimonio en video" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/6PYN_3X6PiU/hqdefault.jpg'">
           <button class="play" aria-label="Reproducir el testimonio de la doctora Lina Guerrero"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z"/></svg></button>
         </div>
         <figcaption><b>Dra. Lina Guerrero</b><span>Cirugía plástica</span><em>Marketing digital</em></figcaption>
       </figure>
       <figure class="testi-card reveal">
         <div class="testi" data-yt="NtjfrKz6_do">
-          <img src="https://i.ytimg.com/vi/NtjfrKz6_do/oardefault.jpg" alt="Testimonio en video de Bailatino Menga" loading="lazy" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/NtjfrKz6_do/hqdefault.jpg'">
+          <img src="https://i.ytimg.com/vi/NtjfrKz6_do/oardefault.jpg" alt="Testimonio en video de Bailatino Menga" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/NtjfrKz6_do/hqdefault.jpg'">
           <button class="play" aria-label="Reproducir el testimonio de Bailatino Menga"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z"/></svg></button>
         </div>
         <figcaption><b>Bailatino Menga</b><span>Escuela de baile</span><em>Marketing digital</em></figcaption>
@@ -817,7 +929,7 @@
 
 <footer>
   <div class="wrap foot">
-    <img src="img/logo-blanco.png" alt="Level Media · Agencia de marketing digital">
+    <img src="img/logo-blanco.png" alt="Level Media · Agencia de marketing digital" width="900" height="603" loading="lazy" decoding="async">
     <p>© 2026 Level Media · Cali, Colombia · <a href="https://wa.me/573184166638" target="_blank" rel="noopener" style="color:var(--muted)" data-analytics-location="footer" data-service="general">+57 318 416 6638</a></p>
   </div>
 </footer>
@@ -862,24 +974,39 @@
     });
   });
 
-  // Medición: cada clic a WhatsApp se registra con su ubicación y servicio.
-  document.querySelectorAll('a[href*="wa.me"]').forEach(a => {
-    a.addEventListener('click', () => {
-      const ctaLocation = a.dataset.analyticsLocation || 'unknown';
-      const service = a.dataset.service || 'general';
-      const linkText = (a.textContent || a.getAttribute('aria-label') || 'WhatsApp')
-        .trim().replace(/\s+/g, ' ');
+  // Medición: impresiones y clics de cada CTA para calcular conversión por ubicación.
+  const whatsappLinks = [...document.querySelectorAll('a[href*="wa.me"]')];
+  const whatsappPayload = a => ({
+    cta_location: a.dataset.analyticsLocation || 'unknown',
+    service: a.dataset.service || 'general',
+    link_text: (a.textContent || a.getAttribute('aria-label') || 'WhatsApp').trim().replace(/\s+/g, ' '),
+    link_url: a.href
+  });
 
+  whatsappLinks.forEach(a => {
+    a.addEventListener('click', () => {
       if (typeof gtag === 'function') {
         gtag('event', 'whatsapp_click', {
-          cta_location: ctaLocation,
-          service,
-          link_text: linkText,
-          link_url: a.href
+          ...whatsappPayload(a),
+          transport_type: 'beacon'
         });
       }
     });
   });
+
+  const ctaViewObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      if (typeof gtag === 'function') {
+        gtag('event', 'whatsapp_cta_view', {
+          ...whatsappPayload(entry.target),
+          engagement_time_msec: 1
+        });
+      }
+      ctaViewObserver.unobserve(entry.target);
+    });
+  }, { threshold: .6 });
+  whatsappLinks.forEach(a => ctaViewObserver.observe(a));
 
   // Lightbox: sirve para la galería del estudio y para los pantallazos de resultados
   const lb = document.getElementById('lb');
@@ -945,41 +1072,111 @@
     }, { once: true });
   });
 
-  // Showreel de fondo. Se carga solo donde tiene sentido: pantallas grandes y sin ahorro de datos.
-  // En celular o conexión lenta no se descarga (el archivo pesa varios MB) y queda el fondo dorado.
-  const showreel = document.getElementById('showreel');
-  const heroBg = document.getElementById('hero-bg');
-  const conexion = navigator.connection || {};
-  const conexionLenta = conexion.saveData === true || /(^|-)(2g|3g)$/.test(conexion.effectiveType || '');
-  const mqChica = window.matchMedia('(max-width: 900px)');
-  const mqQuieto = window.matchMedia('(prefers-reduced-motion: reduce)');
-  showreel.addEventListener('error', () => heroBg.classList.remove('on'));
-
-  // Se reevalúa al cambiar el tamaño: si la página carga con la ventana en 0 de ancho
-  // (pestaña en segundo plano) no se descarta el video para siempre.
-  const decidirShowreel = () => {
-    const anchoConocido = window.innerWidth > 0;
-    const procede = anchoConocido && !mqChica.matches && !conexionLenta && !mqQuieto.matches;
-    if (procede && !showreel.getAttribute('src')) {
-      showreel.src = showreel.dataset.src;
-      heroBg.classList.add('on');
-      showreel.play().catch(() => {});
-    } else if (!procede && showreel.getAttribute('src')) {
-      heroBg.classList.remove('on');   // en celular se suelta para no gastar datos
-      showreel.removeAttribute('src');
-      showreel.load();
-    }
-  };
-  decidirShowreel();
-  mqChica.addEventListener('change', decidirShowreel);
-  window.addEventListener('resize', decidirShowreel, { passive: true });
-  // una pestaña abierta en segundo plano reporta ancho 0: al mostrarse hay que volver a decidir
-  document.addEventListener('visibilitychange', decidirShowreel);
-  window.addEventListener('pageshow', decidirShowreel);
-
   // Header: sombra dorada al hacer scroll
   const hdr = document.querySelector('header');
   window.addEventListener('scroll', () => hdr.classList.toggle('scrolled', window.scrollY > 10), { passive: true });
+
+  // El botón flotante aparece cuando el CTA principal deja de estar visible.
+  const whatsappFloat = document.getElementById('wa-float');
+  const heroWhatsapp = document.querySelector('.hero .btn-gold');
+  const floatObserver = new IntersectionObserver(([entry]) => {
+    whatsappFloat.classList.toggle('visible', !entry.isIntersecting);
+  }, { threshold: .15 });
+  floatObserver.observe(heroWhatsapp);
+
+  // El scroll convierte el hero en una historia: gestión → conexión → conversión.
+  const heroSection = document.querySelector('.hero');
+  const reduceHeroMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let heroFrame = 0;
+  const clamp01 = n => Math.max(0, Math.min(1, n));
+  const revealStage = (progress, start) => clamp01((progress - start) / .16);
+  const updateHeroScroll = () => {
+    heroFrame = 0;
+    if (reduceHeroMotion.matches) {
+      ['--scene-y','--scene-scale','--scene-opacity','--copy-y','--copy-opacity','--story-strategy','--story-content','--story-pauta','--story-outcome']
+        .forEach(prop => heroSection.style.removeProperty(prop));
+      return;
+    }
+    const rect = heroSection.getBoundingClientRect();
+    const progress = clamp01(-rect.top / Math.max(heroSection.offsetHeight * .76, 1));
+    const eased = progress * (2 - progress);
+    heroSection.style.setProperty('--scene-y', `${Math.round(eased * 86)}px`);
+    heroSection.style.setProperty('--scene-scale', (1 + eased * .055).toFixed(3));
+    heroSection.style.setProperty('--scene-opacity', (1 - eased * .18).toFixed(3));
+    heroSection.style.setProperty('--copy-y', `${Math.round(eased * -54)}px`);
+    heroSection.style.setProperty('--copy-opacity', (1 - eased * .86).toFixed(3));
+    heroSection.style.setProperty('--story-strategy', revealStage(progress, .16).toFixed(3));
+    heroSection.style.setProperty('--story-content', revealStage(progress, .30).toFixed(3));
+    heroSection.style.setProperty('--story-pauta', revealStage(progress, .44).toFixed(3));
+    heroSection.style.setProperty('--story-outcome', revealStage(progress, .58).toFixed(3));
+  };
+  const requestHeroScroll = () => {
+    if (!heroFrame) heroFrame = requestAnimationFrame(updateHeroScroll);
+  };
+  window.addEventListener('scroll', requestHeroScroll, { passive: true });
+  window.addEventListener('resize', requestHeroScroll, { passive: true });
+  reduceHeroMotion.addEventListener('change', requestHeroScroll);
+  updateHeroScroll();
+
+  // Contadores de resultados: se activan una sola vez al entrar en pantalla.
+  const resultCounters = [...document.querySelectorAll('.metric-counter')];
+  const counterFormatter = decimals => new Intl.NumberFormat('es-CO', {
+    minimumFractionDigits: decimals,
+    maximumFractionDigits: decimals
+  });
+  const paintCounter = (el, rawValue) => {
+    const divisor = Number(el.dataset.divisor || 1);
+    const decimals = Number(el.dataset.decimals || 0);
+    const suffix = el.dataset.suffix || '';
+    el.textContent = counterFormatter(decimals).format(rawValue / divisor) + suffix;
+  };
+  const finishCounter = el => {
+    paintCounter(el, Number(el.dataset.counter));
+    el.classList.add('counted');
+  };
+  const animateCounter = el => {
+    const target = Number(el.dataset.counter);
+    const duration = 4200;
+    const startedAt = performance.now();
+    const tick = now => {
+      const progress = Math.min((now - startedAt) / duration, 1);
+      const eased = progress * progress * (3 - 2 * progress);
+      paintCounter(el, target * eased);
+      if (progress < 1) requestAnimationFrame(tick);
+      else finishCounter(el);
+    };
+    requestAnimationFrame(tick);
+  };
+  const animateCounterAfterScroll = el => {
+    let idleTimer = 0;
+    const start = () => {
+      window.removeEventListener('scroll', schedule);
+      animateCounter(el);
+    };
+    const schedule = () => {
+      clearTimeout(idleTimer);
+      idleTimer = setTimeout(start, 650);
+    };
+    window.addEventListener('scroll', schedule, { passive: true });
+    schedule();
+  };
+
+  if (reduceHeroMotion.matches) {
+    resultCounters.forEach(finishCounter);
+  } else {
+    resultCounters.forEach(el => paintCounter(el, 0));
+    const counterObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        animateCounterAfterScroll(entry.target);
+        counterObserver.unobserve(entry.target);
+      });
+    }, { threshold: .7, rootMargin: '0px 0px -6% 0px' });
+    resultCounters.forEach(el => counterObserver.observe(el));
+    reduceHeroMotion.addEventListener('change', event => {
+      if (event.matches) resultCounters.forEach(finishCounter);
+    });
+  }
 
   // Reveal on scroll, escalonado dentro de cada grilla
   document.querySelectorAll('.grid, .steps, .team, .testis').forEach(grid => {
