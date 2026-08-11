@@ -149,18 +149,20 @@
   #mobmenu.open{display:flex}
 
   /* ============ HERO ============ */
-  .hero{padding:110px 0 90px;position:relative;overflow:hidden;min-height:min(86vh,840px);display:flex;align-items:center}
+  /* el header mide 72px: el padding superior evita que el titular quede debajo */
+  .hero{padding:92px 0 80px;position:relative;overflow:hidden;min-height:min(80vh,760px);display:flex;align-items:center}
   .hero .wrap{width:100%}
   .hero h1{font-size:clamp(2.6rem,7vw,5rem);max-width:900px;text-transform:uppercase;line-height:1.02}
 
   /* video showreel de fondo (img/showreel.mp4 — pendiente de Jorge) */
   .hero-bg{position:absolute;inset:0;z-index:-2;opacity:0;transition:opacity 1.2s ease}
   .hero-bg.on{opacity:1}
-  .hero-bg video{width:100%;height:100%;object-fit:cover}
+  .hero-bg video{width:100%;height:100%;object-fit:cover;object-position:center center}
+  /* velo parejo: antes la izquierda quedaba al 94% y la derecha al 42%, y el video se veía descentrado */
   .hero-bg .scrim{position:absolute;inset:0;
-    background:linear-gradient(90deg,rgba(18,16,16,.94) 0%,rgba(18,16,16,.72) 45%,rgba(18,16,16,.42) 100%),
-               linear-gradient(0deg,var(--bg) 0%,transparent 26%),
-               linear-gradient(180deg,rgba(18,16,16,.6) 0%,transparent 20%)}
+    background:linear-gradient(90deg,rgba(18,16,16,.90) 0%,rgba(18,16,16,.78) 45%,rgba(18,16,16,.70) 100%),
+               linear-gradient(0deg,var(--bg) 0%,transparent 30%),
+               linear-gradient(180deg,rgba(18,16,16,.82) 0%,rgba(18,16,16,.35) 14%,transparent 26%)}
   .hero p.lead{max-width:600px;margin:22px 0 34px;color:var(--muted);font-size:1.12rem}
   .hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
 
@@ -314,6 +316,13 @@
     box-shadow:0 8px 22px rgba(0,0,0,.5);transition:transform .2s}
   .testi:hover .play{transform:translateX(-50%) scale(1.12)}
   .testi .play svg{width:20px;height:20px;fill:#181206;margin-left:3px}
+  /* ficha del testimonio: quién habla, de qué marca y qué servicio contrató */
+  .testi-card{margin:0;display:flex;flex-direction:column}
+  .testi-card figcaption{padding:14px 2px 0}
+  .testi-card b{font-family:"Clash Display",sans-serif;font-weight:600;font-size:1rem;display:block;line-height:1.25}
+  .testi-card span{display:block;color:var(--muted);font-size:.85rem}
+  .testi-card em{display:block;margin-top:5px;font-style:normal;color:var(--g2);
+    font-family:"JetBrains Mono",monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase}
 
   /* ============ EQUIPO ============ */
   .team{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
@@ -680,22 +689,34 @@
       <p>Nuestros clientes, en sus propias palabras, en video.</p>
     </div>
     <div class="testis">
-      <div class="testi reveal" data-yt="z-V3MMH9T5o">
-        <img src="https://i.ytimg.com/vi/z-V3MMH9T5o/oardefault.jpg" alt="Testimonio en video — Los Arrayanes" loading="lazy" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/z-V3MMH9T5o/hqdefault.jpg'">
-        <button class="play" aria-label="Reproducir testimonio"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z"/></svg></button>
-      </div>
-      <div class="testi reveal" data-yt="QU6H_-rG0UU">
-        <img src="https://i.ytimg.com/vi/QU6H_-rG0UU/oardefault.jpg" alt="Testimonio en video — cliente Level Media" loading="lazy" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/QU6H_-rG0UU/hqdefault.jpg'">
-        <button class="play" aria-label="Reproducir testimonio"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z"/></svg></button>
-      </div>
-      <div class="testi reveal" data-yt="6PYN_3X6PiU">
-        <img src="https://i.ytimg.com/vi/6PYN_3X6PiU/oardefault.jpg" alt="Testimonio en video — cliente Level Media" loading="lazy" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/6PYN_3X6PiU/hqdefault.jpg'">
-        <button class="play" aria-label="Reproducir testimonio"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z"/></svg></button>
-      </div>
-      <div class="testi reveal" data-yt="NtjfrKz6_do">
-        <img src="https://i.ytimg.com/vi/NtjfrKz6_do/oardefault.jpg" alt="Testimonio en video — cliente Level Media" loading="lazy" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/NtjfrKz6_do/hqdefault.jpg'">
-        <button class="play" aria-label="Reproducir testimonio"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z"/></svg></button>
-      </div>
+      <figure class="testi-card reveal">
+        <div class="testi" data-yt="z-V3MMH9T5o">
+          <img src="https://i.ytimg.com/vi/z-V3MMH9T5o/oardefault.jpg" alt="Ángela Garzón, de Los Arrayanes, en su testimonio en video" loading="lazy" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/z-V3MMH9T5o/hqdefault.jpg'">
+          <button class="play" aria-label="Reproducir el testimonio de Ángela Garzón, de Los Arrayanes"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z"/></svg></button>
+        </div>
+        <figcaption><b>Ángela Garzón</b><span>Los Arrayanes</span><em>Marketing digital</em></figcaption>
+      </figure>
+      <figure class="testi-card reveal">
+        <div class="testi" data-yt="QU6H_-rG0UU">
+          <img src="https://i.ytimg.com/vi/QU6H_-rG0UU/oardefault.jpg" alt="DJ Holmes en su testimonio en video" loading="lazy" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/QU6H_-rG0UU/hqdefault.jpg'">
+          <button class="play" aria-label="Reproducir el testimonio de DJ Holmes"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z"/></svg></button>
+        </div>
+        <figcaption><b>DJ Holmes</b><span>Artista</span><em>Producción audiovisual</em></figcaption>
+      </figure>
+      <figure class="testi-card reveal">
+        <div class="testi" data-yt="6PYN_3X6PiU">
+          <img src="https://i.ytimg.com/vi/6PYN_3X6PiU/oardefault.jpg" alt="La doctora Lina Guerrero en su testimonio en video" loading="lazy" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/6PYN_3X6PiU/hqdefault.jpg'">
+          <button class="play" aria-label="Reproducir el testimonio de la doctora Lina Guerrero"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z"/></svg></button>
+        </div>
+        <figcaption><b>Dra. Lina Guerrero</b><span>Cirugía plástica</span><em>Marketing digital</em></figcaption>
+      </figure>
+      <figure class="testi-card reveal">
+        <div class="testi" data-yt="NtjfrKz6_do">
+          <img src="https://i.ytimg.com/vi/NtjfrKz6_do/oardefault.jpg" alt="Testimonio en video de Bailatino Menga" loading="lazy" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/NtjfrKz6_do/hqdefault.jpg'">
+          <button class="play" aria-label="Reproducir el testimonio de Bailatino Menga"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z"/></svg></button>
+        </div>
+        <figcaption><b>Bailatino Menga</b><span>Escuela de baile</span><em>Marketing digital</em></figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -926,18 +947,31 @@
   const heroBg = document.getElementById('hero-bg');
   const conexion = navigator.connection || {};
   const conexionLenta = conexion.saveData === true || /(^|-)(2g|3g)$/.test(conexion.effectiveType || '');
-  const pantallaChica = window.matchMedia('(max-width: 900px)').matches;
-  const menosMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const mqChica = window.matchMedia('(max-width: 900px)');
+  const mqQuieto = window.matchMedia('(prefers-reduced-motion: reduce)');
+  showreel.addEventListener('error', () => heroBg.classList.remove('on'));
 
-  if (!pantallaChica && !conexionLenta && !menosMovimiento) {
-    // Visible por defecto; se oculta solo si el archivo falta o el navegador no puede reproducirlo.
-    // (No se espera 'loadeddata': con la pestaña en segundo plano el navegador difiere la carga.)
-    heroBg.classList.add('on');
-    showreel.addEventListener('error', () => heroBg.classList.remove('on'));
-    showreel.src = showreel.dataset.src;
-  } else {
-    heroBg.remove();
-  }
+  // Se reevalúa al cambiar el tamaño: si la página carga con la ventana en 0 de ancho
+  // (pestaña en segundo plano) no se descarta el video para siempre.
+  const decidirShowreel = () => {
+    const anchoConocido = window.innerWidth > 0;
+    const procede = anchoConocido && !mqChica.matches && !conexionLenta && !mqQuieto.matches;
+    if (procede && !showreel.getAttribute('src')) {
+      showreel.src = showreel.dataset.src;
+      heroBg.classList.add('on');
+      showreel.play().catch(() => {});
+    } else if (!procede && showreel.getAttribute('src')) {
+      heroBg.classList.remove('on');   // en celular se suelta para no gastar datos
+      showreel.removeAttribute('src');
+      showreel.load();
+    }
+  };
+  decidirShowreel();
+  mqChica.addEventListener('change', decidirShowreel);
+  window.addEventListener('resize', decidirShowreel, { passive: true });
+  // una pestaña abierta en segundo plano reporta ancho 0: al mostrarse hay que volver a decidir
+  document.addEventListener('visibilitychange', decidirShowreel);
+  window.addEventListener('pageshow', decidirShowreel);
 
   // Header: sombra dorada al hacer scroll
   const hdr = document.querySelector('header');
